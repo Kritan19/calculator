@@ -1,4 +1,4 @@
-let displayResult = 0 
+let displayResult = '' ;
 let firstnumber = '';
 let operator = ''
 let secondnumber = '';
@@ -59,6 +59,9 @@ function operate (){
     if (operator === '+') {
         result = add(a, b)
     }
+    else if (secondnumber == 0){
+        result = 'You\'re a noob';
+    }
     else if(operator === '-'){
         result = subtract(a, b)
     }
@@ -70,8 +73,10 @@ function operate (){
     }
     else if(operator === '%'){
         result = percent(a, b)
-    } 
-    
+    }
+    else {
+        result = firstnumber;
+    }
     updateResult(result)
     firstnumber = result.toString();
     secondnumber= '';
