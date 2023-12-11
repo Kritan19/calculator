@@ -31,6 +31,20 @@ function allclear(){
     updateResult(displayResult);
 }
 
+function backspace(){
+    if (firstnumber !== ''){
+        firstnumber = firstnumber.slice(0,-1);
+        updateResult(firstnumber);
+    }
+    else if(operator !== ''){
+        operator = '';
+        updateResult(operator);
+    }
+    else if(secondnumber !== ''){
+        secondnumber = secondnumber.slice(0,-1);
+        updateResult(secondnumber);
+    }
+}
 
 function add(a,b) {
     return a+b;
@@ -59,7 +73,7 @@ function operate (){
     if (operator === '+') {
         result = add(a, b)
     }
-    else if (secondnumber == 0){
+    else if (secondnumber == '0'){
         result = 'You\'re a noob';
     }
     else if(operator === '-'){
